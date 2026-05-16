@@ -18,6 +18,7 @@ const Header = ({ toggleMenu, closeMenu }) => {
 
   const location = useLocation(); // gives you current path
   const [isActiveCategory, setIsActiveCategory] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [openLang, setOpenLang] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -188,90 +189,6 @@ const Header = ({ toggleMenu, closeMenu }) => {
                       </Link>
                       <div className="woocommerce widget_shopping_cart">
                         <div className="widget_shopping_cart_content">
-                          {/* <ul className="cart_list">
-                            <li className="mini_cart_item">
-                              <Link to="#" className="remove">
-                                <i className="far fa-times"></i>
-                              </Link>
-                              <Link to="/shop-details" className="img">
-                                <img
-                                  src="/assets/img/cart/cat-img-1.jpg"
-                                  alt="Cart Imagee"
-                                />
-                              </Link>
-                              <Link
-                                to="/shop-details"
-                                className="product-title fw-normal"
-                              >
-                                Smart Watch
-                              </Link>
-                              <span className="amount fw-normal">৳৯৯.00</span>
-                              <div className="quantity">
-                                <button className="quantity-minus qut-btn">
-                                  <i className="far fa-minus"></i>
-                                </button>
-                                <input
-                                  type="number"
-                                  className="qty-input"
-                                  defaultValue="1"
-                                  min="1"
-                                  max="99"
-                                />
-                                <button className="quantity-plus qut-btn">
-                                  <i className="far fa-plus"></i>
-                                </button>
-                              </div>
-                              <div className="subtotal">
-                                <span className="fw-normal fs-6">
-                                  Subtotal:
-                                </span>
-                                &nbsp;
-                                <span className="amount fw-normal fs-6">
-                                  ৳৯৯.00
-                                </span>
-                              </div>
-                            </li>
-                            <li className="mini_cart_item">
-                              <Link to="#" className="remove">
-                                <i className="far fa-times"></i>
-                              </Link>
-                              <Link to="/shop-details" className="img">
-                                <img
-                                  src="/assets/img/cart/cat-img-2.jpg"
-                                  alt="Cart Imagee"
-                                />
-                              </Link>
-                              <Link
-                                to="/shop-details"
-                                className="product-title fw-normal"
-                              >
-                                Boss Chair
-                              </Link>
-                              <span className="amount fw-normal">৳৯0.00</span>
-                              <div className="quantity">
-                                <button className="quantity-minus qut-btn">
-                                  <i className="far fa-minus"></i>
-                                </button>
-                                <input
-                                  type="number"
-                                  className="qty-input"
-                                  defaultValue="2"
-                                  min="1"
-                                  max="99"
-                                />
-                                <button className="quantity-plus qut-btn">
-                                  <i className="far fa-plus"></i>
-                                </button>
-                              </div>
-                              <div className="subtotal fw-normal fs-6">
-                                <span>Subtotal:</span>&nbsp;
-                                <span className="amount fw-normal fs-6">
-                                  ৳১৬0.00
-                                </span>
-                              </div>
-                            </li>
-                          </ul> */}
-
                           <ul className="cart_list">
                             {cart.length > 0 ? (
                               cart.map((item) => (
@@ -388,13 +305,13 @@ const Header = ({ toggleMenu, closeMenu }) => {
         {/* <div className="sticky-wrapper header-bottom"> */}
         <div
           // className="sticky-wrapper header-bottom will-sticky"
-          className={`sticky-wrapper header-bottom ৳{
+          className={`sticky-wrapper header-bottom ${
             isScrolled ? "will-sticky" : ""
           }`}
           style={{ minHeight: "80px" }}
         >
           {/* <div className="sticky-active "> */}
-          <div className={`sticky-active ৳{isScrolled ? "active" : ""}`}>
+          <div className={`sticky-active ${isScrolled ? "active" : ""}`}>
             <div className="container">
               <div className="menu-top">
                 <div className="row justify-content-between align-items-center gx-sm-0">
